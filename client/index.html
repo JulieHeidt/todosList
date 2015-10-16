@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>To Do Or Not To Do</title>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="domain/app.js"></script>
+    <script src="domain/controllers/todoscontroller.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <nav class="tabs">
+    <a ui-sref-active="active" ui-sref="home"> My List </a>
+    <a ui-sref-active="active" ui-sref="archive"> Archives </a>
+    <a ui-sref-active="active" ui-sref="edit"> Edit Tasks </a>
+  </nav>
+  <header>
+    <h1>YOU'VE GOT {{ todos.remainingTodos().length }} THING(S) TO DO!</h1>
+    <h4>{{ todos.completedTodos().length }} things completed | {{ todos.remainingTodos().length   }}    things remaining</h4>
+  </header>
+
+  <body ng-app="todoApp">
+    <div class="wrapper" ng-controller="TodosController as todos" ui-view >
+    </div>
+    
+  </body>
+</html>
