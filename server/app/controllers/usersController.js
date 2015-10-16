@@ -1,4 +1,3 @@
-
 var User = require('../models/User')
 
 function index(req, res){
@@ -69,5 +68,4 @@ module.exports = {
 	show: show,
 	update: update,
 	destroy: destroy
-
 }
